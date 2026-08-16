@@ -1,0 +1,190 @@
+:root{
+	--bg:#f6f7fb;
+	--card:#ffffff;
+	--accent:#b71c1c;
+	--muted:#4b5563;
+	--text:#111827;
+	--sidebar-bg:#ea6565;
+	--sidebar-text:#fffdfd;
+	--sidebar-soft:#f6d5d5;
+	--sidebar-width:280px;
+	--max-width:900px;
+	--gap:24px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+	margin:0;
+	font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	background:var(--bg);
+	color:var(--text);
+	display:flex;
+	justify-content:center;
+	padding:32px 16px;
+}
+
+.resume{
+	width:100%;
+	max-width:var(--max-width);
+	display:flex;
+	gap:var(--gap);
+	background:var(--card);
+	box-shadow:0 6px 20px rgba(11,14,34,0.08);
+	border-radius:10px;
+	max-height:calc(100vh - 64px);
+	overflow:auto;
+	-webkit-overflow-scrolling:touch;
+	padding:12px;
+	background-clip:padding-box;
+}
+
+.sidebar{
+	width:var(--sidebar-width);
+	padding:28px;
+	background:linear-gradient(180deg,#ef7d7d,#dc4f4f);
+	border-right:1px solid #c74242;
+	color:var(--sidebar-text);
+	opacity:1;
+	display:flex;
+	flex-direction:column;
+	gap:10px;
+	position:fixed;
+	left:calc(50% - var(--max-width) / 2 - var(--sidebar-width) - var(--gap));
+	top:0;
+	bottom:0;
+	height:auto;
+	overflow:auto;
+	z-index:30;
+	will-change:filter;
+	animation:sidebar-pulse 3.2s ease-in-out infinite;
+}
+.photo{height:auto;border-radius:0;background:transparent;color:var(--sidebar-text);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;margin-bottom:8px;padding:12px 0;gap:6px}
+.photo .name{margin:0;font-size:34px;color:var(--sidebar-text);line-height:1;font-weight:800;animation:pulse 3s ease-in-out infinite}
+
+.photo .sidebar-title{margin:8px 0 0;font-size:13px;color:#7a1a1a;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:6px 10px;border-radius:10px;background:linear-gradient(135deg,#fff4f4,#ffd7d7);box-shadow:0 6px 14px rgba(91,13,13,0.18);border:1px solid rgba(255,255,255,0.6);cursor:default;text-align:center}
+.photo .sidebar-title:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(91,13,13,0.22)}
+.photo .sidebar-title:first-of-type{margin-top:30px}
+
+.ib-badge{display:inline-flex;align-items:center;justify-content:center;width:22px;height:18px;vertical-align:middle}
+.ib-badge img{width:22px;height:18px;display:block;object-fit:contain}
+.ib-badge.ib-emoji{width:auto;height:auto;font-size:18px;line-height:1}
+
+/* Fryer box: light gold background with golden outline */
+.photo .sidebar-title.fryer-box{
+	background:linear-gradient(135deg,#fff9e6,#f6e1a8);
+	border:2px solid #d4af37;
+	color:#5a3b00;
+	cursor:pointer;
+	box-shadow:0 6px 14px rgba(212,175,55,0.12);
+}
+.photo .sidebar-title.fryer-box:hover{transform:translateY(-1px);box-shadow:0 10px 20px rgba(212,175,55,0.18)}
+
+/* Make the second badge (Fryer) appear black-and-white */
+.fryer-badge img{
+	filter:grayscale(100%) contrast(90%);
+}
+
+/* Link inside fryer box should fill the box and inherit styles */
+.fryer-link{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;height:100%;color:inherit;text-decoration:none}
+.fryer-link:focus{outline:2px solid rgba(212,175,55,0.22);outline-offset:2px}
+
+/* Link inside IB box should fill the box and inherit styles */
+.ib-link{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;height:100%;color:inherit;text-decoration:none;cursor:pointer}
+.ib-link:focus{outline:2px solid rgba(255,255,255,0.18);outline-offset:2px}
+
+/* Link inside Artist box should fill the box and inherit styles */
+.artist-link{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;height:100%;color:inherit;text-decoration:none;cursor:pointer}
+.artist-link:focus{outline:2px solid rgba(255,255,255,0.18);outline-offset:2px}
+
+@keyframes pulse{
+	0%{filter:brightness(1.25);transform:scale(1.02)}
+	50%{filter:brightness(1);transform:scale(1)}
+	100%{filter:brightness(1.25);transform:scale(1.02)}
+}
+
+@media (prefers-reduced-motion: reduce){
+	.photo .name{animation:none}
+	.sidebar{animation:none}
+}
+
+@keyframes sidebar-pulse{
+	0%{filter:brightness(1.06)}
+	50%{filter:brightness(1)}
+	100%{filter:brightness(1.06)}
+}
+.sidebar h3{margin:8px 0;color:#fff7f7}
+.sidebar ul{padding-left:18px;margin:0 0 12px 0;color:#fff}
+.sidebar li{color:#fff}
+
+.sidebar-action{
+	margin-top:auto;
+	padding-top:12px;
+}
+.print-btn{
+	width:100%;
+	padding:11px 12px;
+	border:none;
+	border-radius:10px;
+	background:linear-gradient(135deg,#fff4f4,#ffd7d7);
+	color:#7a1a1a;
+	font-weight:700;
+	letter-spacing:0.2px;
+	cursor:pointer;
+	box-shadow:0 5px 14px rgba(91,13,13,0.2);
+	border:1px solid rgba(255,255,255,0.6);
+	transition:transform 0.2s ease, box-shadow 0.2s ease;
+}
+.print-btn:hover{
+	transform:translateY(-1px);
+	box-shadow:0 7px 16px rgba(91,13,13,0.28);
+}
+
+.content{flex:0 0 620px;max-width:620px;padding:28px}
+.header{padding:0;margin:0}
+/* Header title matches main section titles */
+.header h2{margin:0 0 8px 0;color:var(--accent)}
+
+/* Boxed cards for main content sections */
+.header, .section{
+	background:#ffffff;
+	border:1px solid rgba(11,14,34,0.06);
+	border-radius:10px;
+	padding:16px 18px;
+	margin:12px 0;
+	box-shadow:0 8px 20px rgba(11,14,34,0.03);
+}
+.name{margin:0;font-size:28px}
+.title{margin:6px 0;color:var(--muted)}
+.summary{margin:10px 0;color:var(--muted)}
+
+.section{margin-top:0}
+.section h2{margin:0 0 8px 0;color:var(--accent)}
+.job{margin-bottom:12px}
+.job h3{margin:0}
+.meta{font-size:13px;color:var(--muted);margin-bottom:6px}
+
+.skills li,.contact li{margin-bottom:6px}
+
+.editable[contenteditable="true"]{outline:2px dashed rgba(11,110,253,0.18);padding:2px;border-radius:4px}
+
+/* Small screens */
+@media (max-width:800px){
+	.resume{flex-direction:column}
+	.sidebar{width:100%;border-right:none;border-bottom:1px solid #eef2ff;position:static;height:auto}
+}
+
+/* When viewport is narrow keep sidebar in flow instead of fixed left */
+@media (max-width:1100px){
+	.sidebar{position:static;left:auto;top:auto;height:auto}
+	.content{flex:1;max-width:none}
+}
+
+/* Print tweaks */
+@media print{
+	body{padding:0}
+	.resume{box-shadow:none;border-radius:0}
+	.sidebar{background:transparent;border-right:none}
+	.print-btn{display:none}
+}
+
