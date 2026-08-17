@@ -24,7 +24,9 @@ body{
 	padding:32px 16px;
 }
 
-.resume{}
+.resume{
+	margin:0;
+}
 
 .sidebar{
 	width:var(--sidebar-width);
@@ -127,7 +129,7 @@ body{
 	box-shadow:0 7px 16px rgba(91,13,13,0.28);
 }
 
-.content{flex:1;max-width:820px;padding:28px; position: sticky; margin-left:290px;}
+.content{flex:1;max-width:820px;padding:28px; position: sticky; margin-left:290px; padding-top: 0px;}
 .header{padding:0;margin:0}
 /* Header title matches main section titles */
 .header h2{margin:0 0 8px 0;color:var(--accent)}
