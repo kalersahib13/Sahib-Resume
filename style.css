@@ -24,20 +24,7 @@ body{
 	padding:32px 16px;
 }
 
-.resume{
-	width:100%;
-	max-width:var(--max-width);
-	display:flex;
-	gap:var(--gap);
-	background:var(--card);
-	box-shadow:0 6px 20px rgba(11,14,34,0.08);
-	border-radius:10px;
-	max-height:calc(100vh - 64px);
-	overflow:auto;
-	-webkit-overflow-scrolling:touch;
-	padding:12px;
-	background-clip:padding-box;
-}
+.resume{}
 
 .sidebar{
 	width:var(--sidebar-width);
@@ -50,8 +37,8 @@ body{
 	flex-direction:column;
 	gap:10px;
 	position:fixed;
-	left:calc(50% - var(--max-width) / 2 - var(--sidebar-width) - var(--gap));
 	top:0;
+	left:0;
 	bottom:0;
 	height:auto;
 	overflow:auto;
@@ -140,7 +127,7 @@ body{
 	box-shadow:0 7px 16px rgba(91,13,13,0.28);
 }
 
-.content{flex:0 0 620px;max-width:620px;padding:28px}
+.content{flex:1;max-width:820px;padding:28px; position: sticky; margin-left:290px;}
 .header{padding:0;margin:0}
 /* Header title matches main section titles */
 .header h2{margin:0 0 8px 0;color:var(--accent)}
@@ -171,13 +158,14 @@ body{
 /* Small screens */
 @media (max-width:800px){
 	.resume{flex-direction:column}
-	.sidebar{width:100%;border-right:none;border-bottom:1px solid #eef2ff;position:static;height:auto}
+	.sidebar{width:100%;border-right:none;border-bottom:1px solid #eef2ff;position:fixed;max-height: 260px;overflow-y: auto;top:0;left:0; }
+	.content{flex:1;max-width:none;padding-top:255px; padding-left: 28px; padding-right: 28px; margin-left:0px}
 }
 
-/* When viewport is narrow keep sidebar in flow instead of fixed left */
-@media (max-width:1100px){
-	.sidebar{position:static;left:auto;top:auto;height:auto}
-	.content{flex:1;max-width:none}
+/* When viewport is narrow keep  left */
+@media (max-width:1100px) and (min-width: 801px){
+	.sidebar{position:fixed;left:0;top:0;height:auto}
+	.content{flex:1;max-width:1050px;padding-left: 305px;padding-right: 18px; margin-left:0px}
 }
 
 /* Print tweaks */
