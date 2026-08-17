@@ -25,7 +25,17 @@ body{
 }
 
 .resume{
-	margin:0;
+	width:100%;
+	max-width:var(--max-width);
+	display:flex;
+	gap:var(--gap);
+	
+	border-radius:10px;
+	max-height:calc(100vh - 64px);
+	
+	-webkit-overflow-scrolling:0;
+	
+	background-clip:0;
 }
 
 .sidebar{
