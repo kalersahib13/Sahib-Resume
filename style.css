@@ -50,26 +50,26 @@ body{
 	will-change:filter;
 	animation:sidebar-pulse 3.2s ease-in-out infinite;
 }
-.photo{height:auto;border-radius:0;background:transparent;color:var(--sidebar-text);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;margin-bottom:8px;padding:12px 0;gap:6px}
+.photo{height:auto;border-radius:0;background:transparent;color:var(--sidebar-text);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;margin-bottom:0px;padding:12px 0;gap:6px;padding-bottom: 0px;}
 .photo .name{margin:0;font-size:34px;color:var(--sidebar-text);line-height:1;font-weight:800;animation:pulse 3s ease-in-out infinite}
-
-.photo .sidebar-title{margin:8px 0 0;font-size:13px;color:#7a1a1a;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:6px 10px;border-radius:10px;background:linear-gradient(135deg,#fff4f4,#ffd7d7);box-shadow:0 6px 14px rgba(91,13,13,0.18);border:1px solid rgba(255,255,255,0.6);cursor:default;text-align:center}
-.photo .sidebar-title:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(91,13,13,0.22)}
-.photo .sidebar-title:first-of-type{margin-top:30px}
+.my-titles{height:auto;border-radius:0;background:transparent;color:var(--sidebar-text);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:0px 0;gap:6px}
+.my-titles .sidebar-title{margin:8px 0 0;font-size:13px;color:#7a1a1a;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:6px 10px;border-radius:10px;background:linear-gradient(135deg,#fff4f4,#ffd7d7);box-shadow:0 6px 14px rgba(91,13,13,0.18);border:1px solid rgba(255,255,255,0.6);cursor:default;text-align:center}
+.my-titles .sidebar-title:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(91,13,13,0.22)}
+.my-titles .sidebar-title:first-of-type{margin-top:20px}
 
 .ib-badge{display:inline-flex;align-items:center;justify-content:center;width:22px;height:18px;vertical-align:middle}
 .ib-badge img{width:22px;height:18px;display:block;object-fit:contain}
 .ib-badge.ib-emoji{width:auto;height:auto;font-size:18px;line-height:1}
 
 /* Fryer box: light gold background with golden outline */
-.photo .sidebar-title.fryer-box{
+.my-titles .sidebar-title.fryer-box{
 	background:linear-gradient(135deg,#fff9e6,#f6e1a8);
 	border:2px solid #d4af37;
 	color:#5a3b00;
 	cursor:pointer;
 	box-shadow:0 6px 14px rgba(212,175,55,0.12);
 }
-.photo .sidebar-title.fryer-box:hover{transform:translateY(-1px);box-shadow:0 10px 20px rgba(212,175,55,0.18)}
+.my-titles .sidebar-title.fryer-box:hover{transform:translateY(-1px);box-shadow:0 10px 20px rgba(212,175,55,0.18)}
 
 /* Make the second badge (Fryer) appear black-and-white */
 .fryer-badge img{
@@ -159,11 +159,25 @@ body{
 
 .editable[contenteditable="true"]{outline:2px dashed rgba(11,110,253,0.18);padding:2px;border-radius:4px}
 
+@media (max-width:379px){
+	.sidebar{width:100%;border-right:none;border-bottom:1px solid #eef2ff;position:fixed;max-height: 250px;overflow-y: auto;top:0;left:0; }
+	.content{flex:1;max-width:none;padding-top:225px; padding-left: 28px; padding-right: 28px; margin-left:0px}
+}
 /* Small screens */
-@media (max-width:800px){
+
+@media (max-width:575px) and (min-width:380px){
 	.resume{flex-direction:column}
-	.sidebar{width:100%;border-right:none;border-bottom:1px solid #eef2ff;position:fixed;max-height: 260px;overflow-y: auto;top:0;left:0; }
-	.content{flex:1;max-width:none;padding-top:255px; padding-left: 28px; padding-right: 28px; margin-left:0px}
+	.sidebar{width:100%;border-right:none;border-bottom:1px solid #eef2ff;position:fixed;max-height: 210px;overflow-y: auto;top:0;left:0; }
+	.content{flex:1;max-width:none;padding-top:195px; padding-left: 28px; padding-right: 28px; margin-left:0px}
+	.my-titles{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;gap:11px;margin-top:8px}
+	.my-titles .sidebar-title:first-of-type{margin-top:8px}
+	
+}
+@media (max-width:800px) and (min-width:576px){
+	.sidebar{width:100%;border-right:none;border-bottom:1px solid #eef2ff;position:fixed;max-height: 160px;overflow-y: auto;top:0;left:0; }
+	.content{flex:1;max-width:none;padding-top:145px; padding-left: 28px; padding-right: 28px; margin-left:0px}
+	.my-titles{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;gap:11px;margin-top:8px}
+	.my-titles .sidebar-title:first-of-type{margin-top:8px}
 }
 
 /* When viewport is narrow keep  left */
