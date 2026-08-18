@@ -182,6 +182,12 @@ body{
 	.sidebar{position:fixed;left:0;top:0;height:auto}
 	.content{flex:1;max-width:1050px;padding-left: 305px;padding-right: 18px; margin-left:0px}
 }
+@media only screen and (max-width: 450px) and (hover: none) and (pointer: coarse) {
+	.resume{flex-direction:column}
+	.sidebar{width:100%;border-right:none;border-bottom:1px solid #eef2ff;position:fixed;max-height: 200px;overflow-y: auto;top:0;left:0; }
+	.content{flex:1;max-width:none;padding-top:185px; padding-left: 28px; padding-right: 28px; margin-left:0px}
+	.my-titles{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;gap:11px;margin-top:8px}
+	.my-titles .sidebar-title:first-of-type{margin-top:8px}}
 
 /* Print tweaks */
 @media print{
