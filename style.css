@@ -226,7 +226,7 @@ body{
 	.content{flex:1;max-width:none;padding-top:185px; padding-left: 28px; padding-right: 28px; margin-left:0px}
 	.my-titles{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;gap:11px;margin-top:8px}
 	.my-titles .sidebar-title:first-of-type{margin-top:8px}}
-	.ib-1{height:52px; width:175px;}
+	.Courses{.ib-1{height:52px; width:175px;}}
 
 /* Print tweaks */
 @media print{
