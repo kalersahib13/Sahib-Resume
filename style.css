@@ -29,7 +29,7 @@ body{
 	
 	padding:0px;
 	
-	.ib{
+	.ib-1{
 		box-shadow:0 6px 14px rgba(91,13,13,0.18);
 		padding: 2px;
 		padding-left: 10px;
@@ -37,6 +37,21 @@ body{
 		text-align: left;
 		margin-left: 15px;
 		width:261px;
+		color:#7a1a1a;
+		font-weight: 425;
+		height: 30px;
+		border:1px solid #c74242;
+		border-radius:10px;
+		background-color:#ffd7d7;
+	}
+	.ib-2{
+		box-shadow:0 6px 14px rgba(91,13,13,0.18);
+		padding: 2px;
+		padding-left: 10px;
+		padding-bottom: 0px;
+		text-align: left;
+		margin-left: 15px;
+		width:167px;
 		color:#7a1a1a;
 		font-weight: 425;
 		height: 30px;
@@ -207,10 +222,11 @@ body{
 }
 @media only screen and (max-width: 450px) and (hover: none) and (pointer: coarse) {
 	.resume{flex-direction:column}
-	.sidebar{width:100%;border-right:none;border-bottom:1px solid #eef2ff;position:fixed;max-height: 200px;overflow-y: auto;top:0;left:0; }
+	.sidebar{width:100%;border-right:none;border-bottom:5px solid #c74242;position:fixed;max-height: 200px;overflow-y: auto;top:0;left:0; }
 	.content{flex:1;max-width:none;padding-top:185px; padding-left: 28px; padding-right: 28px; margin-left:0px}
 	.my-titles{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;gap:11px;margin-top:8px}
 	.my-titles .sidebar-title:first-of-type{margin-top:8px}}
+	.ib-1{height:52px; width:175px;}
 
 /* Print tweaks */
 @media print{
