@@ -2,7 +2,7 @@
 	--bg:#f6f7fb;
 	--card:#ffffff;
 	--accent:#b71c1c;
-	--muted:#4b5563;
+	--muted:#161a1f;
 	--text:#111827;
 	--sidebar-bg:#ea6565;
 	--sidebar-text:#fffdfd;
@@ -10,6 +10,7 @@
 	--sidebar-width:280px;
 	--max-width:900px;
 	--gap:24px;
+	--notable:#5e5d5a;
 }
 
 *{box-sizing:border-box}
@@ -24,6 +25,28 @@ body{
 	padding:32px 16px;
 }
 
+.Courses {display: flex; flex-direction: column; gap: 0px;
+	
+	padding:0px;
+	
+	.ib{
+		box-shadow:0 6px 14px rgba(91,13,13,0.18);
+		padding: 2px;
+		padding-left: 10px;
+		padding-bottom: 0px;
+		text-align: left;
+		margin-left: 15px;
+		width:261px;
+		color:#7a1a1a;
+		font-weight: 425;
+		height: 30px;
+		border:1px solid #c74242;
+		border-radius:10px;
+		background-color:#ffd7d7;
+	}
+
+}
+
 .resume{
 	max-width:1000px;
 	display:flex;
@@ -34,7 +57,7 @@ body{
 	width:var(--sidebar-width);
 	padding:28px;
 	background:linear-gradient(180deg,#ef7d7d,#dc4f4f);
-	border-right:1px solid #c74242;
+	border-right:5px solid #c74242;
 	color:var(--sidebar-text);
 	opacity:1;
 	display:flex;
@@ -145,10 +168,11 @@ body{
 	margin:12px 0;
 	box-shadow:0 8px 20px rgba(11,14,34,0.03);
 }
+.summary-editable{margin-bottom:4px; }
 .name{margin:0;font-size:28px}
 .title{margin:6px 0;color:var(--muted)}
 .summary{margin:10px 0;color:var(--muted)}
-
+.notable{color:var(--notable);margin-bottom:4px; margin-top: 10px;}
 .section{margin-top:0}
 .section h2{margin:0 0 8px 0;color:var(--accent)}
 .job{margin-bottom:12px}
@@ -157,21 +181,20 @@ body{
 
 .skills li,.contact li{margin-bottom:6px}
 
-.editable[contenteditable="true"]{outline:2px dashed rgba(11,110,253,0.18);padding:2px;border-radius:4px}
 
 
 /* Small screens */
 
 @media (max-width:590px) and (min-width:380px){
 	.resume{flex-direction:column}
-	.sidebar{width:100%;border-right:none;border-bottom:1px solid #eef2ff;position:fixed;max-height: 200px;overflow-y: auto;top:0;left:0; }
+	.sidebar{width:100%;border-right:none;border-bottom:5px solid #c74242;position:fixed;max-height: 200px;overflow-y: auto;top:0;left:0; }
 	.content{flex:1;max-width:none;padding-top:185px; padding-left: 28px; padding-right: 28px; margin-left:0px}
 	.my-titles{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;gap:11px;margin-top:8px}
 	.my-titles .sidebar-title:first-of-type{margin-top:8px}
 	
 }
 @media (max-width:800px) and (min-width:591px){
-	.sidebar{width:100%;border-right:none;border-bottom:1px solid #eef2ff;position:fixed;max-height: 150px;overflow-y: auto;top:0;left:0; }
+	.sidebar{width:100%;border-right:none;border-bottom:5px solid #c74242;position:fixed;max-height: 150px;overflow-y: auto;top:0;left:0; }
 	.content{flex:1;max-width:none;padding-top:135px; padding-left: 28px; padding-right: 28px; margin-left:0px}
 	.my-titles{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;gap:11px;margin-top:8px}
 	.my-titles .sidebar-title:first-of-type{margin-top:8px}
