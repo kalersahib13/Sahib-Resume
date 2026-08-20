@@ -24,7 +24,33 @@ body{
 	justify-content:center;
 	padding:32px 16px;
 }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration:       0.01ms !important;
+    animation-iteration-count: 1    !important;
+    transition-duration:      0.01ms !important;
+  }
+  .cursor-glow { display: none; }
+}
 
+.cursor-glow {
+  position: fixed;
+  top: 0; left: 0;
+  width: 340px; height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(145, 130, 130, 0.13) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              background 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+}
+.cursor-glow.visible { opacity: 1; }
 .Courses {display: flex; flex-direction: column; gap:0px;
 	
 	padding:0px;
