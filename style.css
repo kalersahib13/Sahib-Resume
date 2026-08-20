@@ -3,7 +3,7 @@
 	--card:#ffffff;
 	--accent:#b71c1c;
 	--muted:#161a1f;
-	--text:#111827;
+	--text:#4a5568;;
 	--sidebar-bg:#ea6565;
 	--sidebar-text:#fffdfd;
 	--sidebar-soft:#f6d5d5;
@@ -43,6 +43,7 @@ body{
 		border:1px solid #c74242;
 		border-radius:10px;
 		background-color:#ffd7d7;
+		
 	}
 	.ib-2{
 		box-shadow:0 6px 14px rgba(91,13,13,0.18);
@@ -58,9 +59,77 @@ body{
 		border:1px solid #c74242;
 		border-radius:10px;
 		background-color:#ffd7d7;
+		
+	}
+	.ib-2:hover{transform:translateY(-1px);background-color:#ffb5b5}
+	.ib-1:hover{transform:translateY(-1px);background-color:#ffb5b5}
+}
+.award-dot{
+  border-radius: 0.5rem;
+  
+}
+.award-dot:hover{
+
+  background-color: #ffeded;
+  
+	
+	padding-left: 35px;
+	ul{
+		list-style: none; /* Hide default bullets */
+	}
+	
+	li::before {
+		margin: 10px;
+	}
+}
+.awards-editable{
+	margin-left:-15px;
+	ul {
+		padding-left:200px;
+  list-style: none; /* Hide default bullets */
+	}
+	li:last-child {
+  border-bottom: none;
 	}
 
+	
+	li {
+  position: relative;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 30px; /* Space for the bullet */
+  border-bottom: 1px solid #ccc; 
+  
+	}
+
+	li::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 22px;
+  transform: translateY(-50%);
+  border-bottom: 1px solid #ccc; 
+  /* Bullet shape */
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #c74242;
+  
+  /* Glow effect */
+  box-shadow: 
+0 0 8px #c74242;
+.award-dot :hover{
+	left: 10px;
 }
+	}
+	gap: 10px; 
+display: flex; 
+flex-direction: column; 
+margin-top: 10px; 
+margin-bottom: 10px;
+color: #4a5568;
+}
+
 
 .resume{
 	max-width:1000px;
@@ -91,14 +160,16 @@ body{
 .photo{height:auto;border-radius:0;background:transparent;color:var(--sidebar-text);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;margin-bottom:0px;padding:12px 0;gap:6px;padding-bottom: 0px;}
 .photo .name{margin:0;font-size:34px;color:var(--sidebar-text);line-height:1;font-weight:800;animation:pulse 3s ease-in-out infinite}
 .my-titles{height:auto;border-radius:0;background:transparent;color:var(--sidebar-text);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:0px 0;gap:6px}
-.my-titles .sidebar-title{margin:8px 0 0;font-size:13px;color:#7a1a1a;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:6px 10px;border-radius:10px;background:linear-gradient(135deg,#fff4f4,#ffd7d7);box-shadow:0 6px 14px rgba(91,13,13,0.18);border:1px solid rgba(255,255,255,0.6);cursor:default;text-align:center}
-.my-titles .sidebar-title:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(91,13,13,0.22)}
+.my-titles .sidebar-title{margin:8px 0 0;font-size:13px;color:#7a1a1a;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:6px 10px;border-radius:10px;background:linear-gradient(135deg,#fff4f4,#ffd7d7);box-shadow:0 6px 14px rgba(91,13,13,0.18);border:2px solid #c74242;cursor:default;text-align:center}
+.my-titles .sidebar-title:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(91,13,13,0.22); background:linear-gradient(180deg,#ffd7d7,#ffc6c6)}
 .my-titles .sidebar-title:first-of-type{margin-top:20px}
 
 .ib-badge{display:inline-flex;align-items:center;justify-content:center;width:22px;height:18px;vertical-align:middle}
 .ib-badge img{width:22px;height:18px;display:block;object-fit:contain}
 .ib-badge.ib-emoji{width:auto;height:auto;font-size:18px;line-height:1}
-
+element.style {
+    --dot-color: #420404;
+}
 /* Fryer box: light gold background with golden outline */
 .my-titles .sidebar-title.fryer-box{
 	background:linear-gradient(135deg,#fff9e6,#f6e1a8);
@@ -107,7 +178,9 @@ body{
 	cursor:pointer;
 	box-shadow:0 6px 14px rgba(212,175,55,0.12);
 }
-.my-titles .sidebar-title.fryer-box:hover{transform:translateY(-1px);box-shadow:0 10px 20px rgba(212,175,55,0.18)}
+.my-titles .sidebar-title.fryer-box:hover{transform:translateY(-2px);box-shadow:0 10px 20px rgba(212,175,55,0.18);background:linear-gradient(135deg,#fff5d5,#f8e5b1)}
+
+
 
 /* Make the second badge (Fryer) appear black-and-white */
 .fryer-badge img{
@@ -132,6 +205,8 @@ body{
 	100%{filter:brightness(1.25);transform:scale(1.02)}
 }
 
+.edu-editable{color:var(--muted);}
+.editable{color:var(--muted);}
 @media (prefers-reduced-motion: reduce){
 	.photo .name{animation:none}
 	.sidebar{animation:none}
