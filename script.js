@@ -35,4 +35,17 @@ document.addEventListener("mouseleave", () => {
   cursorGlow.classList.remove("visible");
   cancelAnimationFrame(glowRAF);
 });
+// Sidebar Mobile Flip Logic
+const flipTo2 = document.getElementById('flipTo2');
+const flipTo1 = document.getElementById('flipTo1');
+const sidebar = document.getElementById('sidebar');
 
+if (flipTo2 && flipTo1 && sidebar) {
+    flipTo2.addEventListener('click', () => {
+        sidebar.classList.add('flipped');
+    });
+    
+    flipTo1.addEventListener('click', () => {
+        sidebar.classList.remove('flipped');
+    });
+}

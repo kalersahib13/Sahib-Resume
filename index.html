@@ -9,34 +9,44 @@
 <body>
 	<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 	<main class="resume">
-		<aside class="sidebar">
-			<div class="photo">
-				<h1 class="name">Sahib Kaler</h1>
-			</div>
-			<div class="my-titles">
-				<p class="sidebar-title title editable"><a class="ib-link" href="https://ibo.org/programmes/diploma-programme/" target="_blank" rel="noopener noreferrer"><span class="ib-badge" aria-hidden="true"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/International_Baccalaureate_Logo.svg/3840px-International_Baccalaureate_Logo.svg.png" alt="IB logo"></span>IB Diploma Candidate</a></p>
-					<p class="sidebar-title title editable"><a class="artist-link" href="https://drive.google.com/drive/folders/1ir1lof5NfAL0bgU98gOcK6kbPDl4A4wL?usp=drive_link" target="_blank" rel="noopener noreferrer"><span class="ib-badge ib-emoji" aria-hidden="true">🎨</span>Artist</a></p>
-					<p class="sidebar-title title editable fryer-box"><a class="fryer-link" href="https://artofproblemsolving.com/wiki/index.php/CEMC_Fryer_Contest" target="_blank" rel="noopener noreferrer"><span class="ib-badge fryer-badge" aria-hidden="true"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlWrb1bxmJZP45T40GDrKpq5MXptBb-f2L9P1xVWjstYXA1Q5fs2sRgPQf&s=10" alt="Fryer logo"></span>Fryer School Champion</a></p>
-			</div>
-			<h3 class="editable">Contact</h3>
-			<ul class="contact editable">
-				<li>Email: kalersahib13@gmail.com</li>
-				<li>Phone: +1(604) 953-1164
-                </li>
-				<li>Location: Delta, BC</li>
-			</ul>
+		<aside class="sidebar" id="sidebar">
+    <!-- View 1: Photo and Titles -->
+    <div class="sidebar-page-1">
+        <div class="photo">
+            <h1 class="name">Sahib Kaler</h1>
+        </div>
+        <div class="my-titles">
+            <p class="sidebar-title title editable"><a class="ib-link" href="https://ibo.org/programmes/diploma-programme/" target="_blank" rel="noopener noreferrer"><span class="ib-badge" aria-hidden="true"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/International_Baccalaureate_Logo.svg/3840px-International_Baccalaureate_Logo.svg.png" alt="IB logo"></span>IB Diploma Candidate</a></p>
+            <p class="sidebar-title title editable"><a class="artist-link" href="https://drive.google.com/drive/folders/1ir1lof5NfAL0bgU98gOcK6kbPDl4A4wL?usp=drive_link" target="_blank" rel="noopener noreferrer"><span class="ib-badge ib-emoji" aria-hidden="true">🎨</span>Artist</a></p>
+            <p class="sidebar-title title editable fryer-box"><a class="fryer-link" href="https://artofproblemsolving.com/wiki/index.php/CEMC_Fryer_Contest" target="_blank" rel="noopener noreferrer"><span class="ib-badge fryer-badge" aria-hidden="true"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlWrb1bxmJZP45T40GDrKpq5MXptBb-f2L9P1xVWjstYXA1Q5fs2sRgPQf&s=10" alt="Fryer logo"></span>Fryer School Champion</a></p>
+        </div>
+        <!-- Button to flip to Contact Info -->
+        <button class="mobile-flip-btn" id="flipTo2">More Info ➔</button>
+    </div>
 
-			<h3 class="editable">Languages</h3>
-			<ul class="editable">
-				<li>English (Fluent)</li>
-				<li>French (Beginner)</li>
-                <li>Punjabi (Intermediate)</li>
-			</ul>
+    <!-- View 2: Contact, Languages, Print -->
+    <div class="sidebar-page-2">
+        <!-- Button to flip back to Profile -->
+        <button class="mobile-flip-btn" id="flipTo1">⬅ Back to Profile</button>
+        <h3 class="editable">Contact</h3>
+        <ul class="contact editable">
+            <li>Email: kalersahib13@gmail.com</li>
+            <li>Phone: +1(604) 953-1164</li>
+            <li>Location: Delta, BC</li>
+        </ul>
 
-			<div class="sidebar-action">
-				<button id="printBtn" class="print-btn">Print / Save as PDF</button>
-			</div>
-		</aside>
+        <h3 class="editable">Languages</h3>
+        <ul class="editable">
+            <li>English (Fluent)</li>
+            <li>French (Beginner)</li>
+            <li>Punjabi (Intermediate)</li>
+        </ul>
+
+        <div class="sidebar-action">
+            <button id="printBtn" class="print-btn">Print / Save as PDF</button>
+        </div>
+    </div>
+</aside>
 
 		<section class="content">
 			<header class="header">

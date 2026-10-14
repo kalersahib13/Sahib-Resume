@@ -471,3 +471,47 @@ element.style {
 		display: none !important;
 	}
 }
+/* Hide flip buttons on desktop */
+.mobile-flip-btn {
+    display: none;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: var(--sidebar-text);
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 12px auto 0;
+    font-weight: bold;
+    text-align: center;
+}
+
+.mobile-flip-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Mobile flip logic for screens 800px and under */
+@media (max-width: 800px) {
+    .sidebar {
+        overflow-y: hidden; /* Removes the scroll wheel */
+        max-height: none; /* Allows the container to fit the active view */
+        padding-bottom: 15px;
+    }
+    
+    .mobile-flip-btn {
+        display: block;
+    }
+    
+    .sidebar-page-2 {
+        display: none; /* Hide page 2 by default on mobile */
+    }
+    
+    /* When flipped via JS */
+    .sidebar.flipped .sidebar-page-1 {
+        display: none;
+    }
+    
+    .sidebar.flipped .sidebar-page-2 {
+        display: flex;
+        flex-direction: column;
+    }
+}
