@@ -49,3 +49,15 @@ if (flipTo2 && flipTo1 && sidebar) {
         sidebar.classList.remove('flipped');
     });
 }
+// Function to dynamically adjust content top padding based on sidebar height
+// Mobile Sidebar Flip Logic (CSS handles all the spacing now)
+document.addEventListener('DOMContentLoaded', function() {
+    const flipTo2 = document.getElementById('flipTo2');
+    const flipTo1 = document.getElementById('flipTo1');
+    const sidebar = document.getElementById('sidebar');
+
+    if (flipTo2 && flipTo1 && sidebar) {
+        flipTo2.addEventListener('click', () => sidebar.classList.add('flipped'));
+        flipTo1.addEventListener('click', () => sidebar.classList.remove('flipped'));
+    }
+});
