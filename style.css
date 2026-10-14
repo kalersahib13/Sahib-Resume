@@ -125,7 +125,8 @@ color: #15171a;
 background-color: #c74242;
   margin-top: 0.4rem;
    box-shadow: 
-0 0 8px #c74242;;
+0 0 8px #c74242;
+margin-right: 10px;
 }
 
 .resume{
@@ -308,3 +309,103 @@ element.style {
 	.print-btn{display:none}
 }
 
+/* Print & PDF Export Tweaks */
+@media print {
+	@page {
+		margin: 1.2cm;
+		size: auto;
+	}
+
+	*, *::before, *::after {
+		background: transparent !important;
+		color: #000000 !important;
+		box-shadow: none !important;
+		text-shadow: none !important;
+		animation: none !important;
+		transition: none !important;
+	}
+
+	body {
+		padding: 0;
+		background: #ffffff !important;
+		font-size: 11pt;
+		line-height: 1.4;
+	}
+
+	/* Layout Adjustments */
+	.resume {
+		display: block !important;
+		width: 100% !important;
+		max-width: 100% !important;
+		gap: 0 !important;
+	}
+
+	.sidebar {
+		position: static !important;
+		width: 100% !important;
+		height: auto !important;
+		padding: 0 0 16px 0 !important;
+		border-right: none !important;
+		border-bottom: 2px solid #333333 !important;
+		margin-bottom: 20px !important;
+	}
+
+	.content {
+		position: static !important;
+		margin-left: 0 !important;
+		padding: 0 !important;
+		width: 100% !important;
+	}
+
+	.header, .section {
+		border: none !important;
+		padding: 0 !important;
+		margin: 0 0 16px 0 !important;
+		page-break-inside: avoid;
+	}
+
+	.header h2, .section h2 {
+		color: #000000 !important;
+		border-bottom: 1px solid #666666;
+		padding-bottom: 4px;
+		margin-bottom: 8px;
+	}
+
+	/* Element-specific Cleanups */
+	.cursor-glow, 
+	.print-btn, 
+	.sidebar-action {
+		display: none !important;
+	}
+
+	.my-titles {
+		display: flex !important;
+		flex-direction: row !important;
+		flex-wrap: wrap !important;
+		gap: 8px !important;
+		justify-content: flex-start !important;
+	}
+
+	.my-titles .sidebar-title,
+	.Courses .ib-1,
+	.Courses .ib-2 {
+		border: 1px solid #666666 !important;
+		color: #000000 !important;
+		background: #ffffff !important;
+		box-shadow: none !important;
+		transform: none !important;
+		height: auto !important;
+		width: auto !important;
+		padding: 4px 8px !important;
+	}
+
+	a {
+		text-decoration: none !important;
+		color: #000000 !important;
+	}
+
+	.award-dot {
+		background-color: #000000 !important;
+		box-shadow: none !important;
+	}
+}
